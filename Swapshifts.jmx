@@ -1,0 +1,2092 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain"></stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.protocol"></stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="filename">C:/Users/1024929/Desktop/ESS_SWAP_Test_Users.csv</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="variableNames">username</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1370726934000</longProp>
+        <longProp name="ThreadGroup.end_time">1370726934000</longProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Launch" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="68 /Retail/rp/login" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/rp/login</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">navigate</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal?siteId=${SiteID}</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-User" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                  <stringProp name="Header.value">?1</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                </elementProp>
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">max-age=0</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="LToken" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">LToken</stringProp>
+              <stringProp name="RegexExtractor.regex">&lt;input type=&quot;hidden&quot; id=&quot;loginToken&quot; name=&quot;loginToken&quot; value=&quot;(.*?)&quot;/&gt;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NF_Token</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Login" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="71 /Retail/data/login" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="loginName" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">loginName</stringProp>
+                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="password" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">password</stringProp>
+                  <stringProp name="Argument.value">123456</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="loginToken" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">loginToken</stringProp>
+                  <stringProp name="Argument.value">${LToken}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/data/login</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/rp/login</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="SiteID" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">SiteID</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;siteId&quot;:&quot;(.*?)&quot;},</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NF</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="72 /Retail/portal" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="siteId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">siteId</stringProp>
+                  <stringProp name="Argument.value">${SiteID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/portal</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">navigate</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/rp/login</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-User" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                  <stringProp name="Header.value">?1</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                </elementProp>
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="CSRF_Token1" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">CSRF_Token1</stringProp>
+              <stringProp name="RegexExtractor.regex">&lt;input type=&quot;hidden&quot; name=&quot;csrfToken&quot; id=&quot;csrfToken&quot; value=&quot;(.*?)&quot;/&gt;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NF</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="80 /Retail/portal/page" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="libraryContext" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">libraryContext</stringProp>
+                  <stringProp name="Argument.value">9cc9db0a5213abde4ec627aa2a3e6b3578a5a2cfbcf546fb18b791f41959ee59</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="siteId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">siteId</stringProp>
+                  <stringProp name="Argument.value">${SiteID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="menu" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">menu</stringProp>
+                  <stringProp name="Argument.value">wmess</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/portal/page</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">nested-navigate</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal?siteId=${SiteID}</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="CSRF_Token" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">CSRF_Token</stringProp>
+              <stringProp name="RegexExtractor.regex">&lt;input type=&quot;hidden&quot; name=&quot;csrfToken&quot; id=&quot;csrfToken&quot; value=&quot;(.*?)&quot;/&gt;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NF</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="NativeID" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">NativeID</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;nativeId&quot;:&quot;(.*?)&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NF</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="84 /Retail/data/ess/services/Employee.asmx/GetStartDayOfWeek" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="siteId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">siteId</stringProp>
+                  <stringProp name="Argument.value">${NativeID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="_dc" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">_dc</stringProp>
+                  <stringProp name="Argument.value">1579363535434</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/data/ess/services/Employee.asmx/GetStartDayOfWeek</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">5262</stringProp>
+              <stringProp name="RandomTimer.range">100.0</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:5262ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal/page?libraryContext=9cc9db0a5213abde4ec627aa2a3e6b3578a5a2cfbcf546fb18b791f41959ee59&amp;siteId=${SiteID}&amp;menu=wmess</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="CSRF-ENCRYPT-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">CSRF-ENCRYPT-TOKEN</stringProp>
+                  <stringProp name="Header.value">${CSRF_Token}</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="79 /Retail/refs/widgetStatus/api/v1/ess/CustomServices/Notifications.asmx/GetPendingEditsCount" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="siteId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">siteId</stringProp>
+                  <stringProp name="Argument.value">${NativeID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="_dc" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">_dc</stringProp>
+                  <stringProp name="Argument.value">1579363529672</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/refs/widgetStatus/api/v1/ess/CustomServices/Notifications.asmx/GetPendingEditsCount</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal?siteId=${SiteID}</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="CSRF-ENCRYPT-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">CSRF-ENCRYPT-TOKEN</stringProp>
+                  <stringProp name="Header.value">${CSRF_Token1}</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="78 /Retail/refs/widgetStatus/api/v1/ess/CustomServices/SwapShift.asmx/GetMyScheduleWidgetStatus" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="siteId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">siteId</stringProp>
+                  <stringProp name="Argument.value">${NativeID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="_dc" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">_dc</stringProp>
+                  <stringProp name="Argument.value">1579363529671</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/refs/widgetStatus/api/v1/ess/CustomServices/SwapShift.asmx/GetMyScheduleWidgetStatus</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal?siteId=${SiteID}</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="CSRF-ENCRYPT-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">CSRF-ENCRYPT-TOKEN</stringProp>
+                  <stringProp name="Header.value">${CSRF_Token1}</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="83 /Retail/data/ess/api/featureconfiguration" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="_dc" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">_dc</stringProp>
+                  <stringProp name="Argument.value">1579363535432</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="siteId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">siteId</stringProp>
+                  <stringProp name="Argument.value">${NativeID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/data/ess/api/featureconfiguration</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal/page?libraryContext=9cc9db0a5213abde4ec627aa2a3e6b3578a5a2cfbcf546fb18b791f41959ee59&amp;siteId=${SiteID}&amp;menu=wmess</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="CSRF-ENCRYPT-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">CSRF-ENCRYPT-TOKEN</stringProp>
+                  <stringProp name="Header.value">${CSRF_Token}</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="90 /Retail/data/ess/CustomServices/SwapShift.asmx/GetCustomPendingApprovals?siteId=1565465" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/data/ess/CustomServices/SwapShift.asmx/GetCustomPendingApprovals?siteId=${NativeID}</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal/page?libraryContext=9cc9db0a5213abde4ec627aa2a3e6b3578a5a2cfbcf546fb18b791f41959ee59&amp;siteId=${SiteID}&amp;menu=wmess</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="CSRF-ENCRYPT-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">CSRF-ENCRYPT-TOKEN</stringProp>
+                  <stringProp name="Header.value">${CSRF_Token}</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="85 /Retail/data/ess/api/MyTimecard/2020-01-18" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="_dc" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">_dc</stringProp>
+                  <stringProp name="Argument.value">1579363541983</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">id</stringProp>
+                  <stringProp name="Argument.value">2020-01-18</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="siteId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">siteId</stringProp>
+                  <stringProp name="Argument.value">${NativeID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/data/ess/api/MyTimecard/2020-01-18</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal/page?libraryContext=9cc9db0a5213abde4ec627aa2a3e6b3578a5a2cfbcf546fb18b791f41959ee59&amp;siteId=${SiteID}&amp;menu=wmess</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="CSRF-ENCRYPT-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">CSRF-ENCRYPT-TOKEN</stringProp>
+                  <stringProp name="Header.value">${CSRF_Token}</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="89 /Retail/data/ess/services/SwapShift.asmx/GetScheduleDataForSwapper?siteId=1565465" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;filterDay&quot;:&quot;2020-01-18T00:00:00&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/data/ess/services/SwapShift.asmx/GetScheduleDataForSwapper?siteId=${NativeID}</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal/page?libraryContext=9cc9db0a5213abde4ec627aa2a3e6b3578a5a2cfbcf546fb18b791f41959ee59&amp;siteId=${SiteID}&amp;menu=wmess</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="CSRF-ENCRYPT-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">CSRF-ENCRYPT-TOKEN</stringProp>
+                  <stringProp name="Header.value">${CSRF_Token}</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="88 /Retail/data/ess/CustomServices/SwapShift.asmx/GetCustomRequestedByMe?siteId=1565465" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/data/ess/CustomServices/SwapShift.asmx/GetCustomRequestedByMe?siteId=${NativeID}</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal/page?libraryContext=9cc9db0a5213abde4ec627aa2a3e6b3578a5a2cfbcf546fb18b791f41959ee59&amp;siteId=${SiteID}&amp;menu=wmess</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="CSRF-ENCRYPT-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">CSRF-ENCRYPT-TOKEN</stringProp>
+                  <stringProp name="Header.value">${CSRF_Token}</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="87 /Retail/data/ess/api/CustomAvailableUnfilledShifts" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="_dc" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">_dc</stringProp>
+                  <stringProp name="Argument.value">1579363541986</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="selectedWeekDay" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">selectedWeekDay</stringProp>
+                  <stringProp name="Argument.value">2020-01-18T00%3A00%3A00</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="siteId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">siteId</stringProp>
+                  <stringProp name="Argument.value">${NativeID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/data/ess/api/CustomAvailableUnfilledShifts</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal/page?libraryContext=9cc9db0a5213abde4ec627aa2a3e6b3578a5a2cfbcf546fb18b791f41959ee59&amp;siteId=${SiteID}&amp;menu=wmess</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="CSRF-ENCRYPT-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">CSRF-ENCRYPT-TOKEN</stringProp>
+                  <stringProp name="Header.value">${CSRF_Token}</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="86 /Retail/data/ess/api/MyCustomSchedule/2020-01-18" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="_dc" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">_dc</stringProp>
+                  <stringProp name="Argument.value">1579363541985</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">id</stringProp>
+                  <stringProp name="Argument.value">2020-01-18</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="siteId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">siteId</stringProp>
+                  <stringProp name="Argument.value">${NativeID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/data/ess/api/MyCustomSchedule/2020-01-18</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal/page?libraryContext=9cc9db0a5213abde4ec627aa2a3e6b3578a5a2cfbcf546fb18b791f41959ee59&amp;siteId=${SiteID}&amp;menu=wmess</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="CSRF-ENCRYPT-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">CSRF-ENCRYPT-TOKEN</stringProp>
+                  <stringProp name="Header.value">${CSRF_Token}</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Date" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="27 /Retail/data/ess/api/MyTimecard/2020-01-25" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="_dc" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">_dc</stringProp>
+                  <stringProp name="Argument.value">1579515669798</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">id</stringProp>
+                  <stringProp name="Argument.value">2020-01-25</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="siteId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">siteId</stringProp>
+                  <stringProp name="Argument.value">${NativeID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/data/ess/api/MyTimecard/2020-01-25</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+              <stringProp name="ConstantTimer.delay">240328</stringProp>
+              <stringProp name="RandomTimer.range">100.0</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:240328ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal/page?libraryContext=9cc9db0a5213abde4ec627aa2a3e6b3578a5a2cfbcf546fb18b791f41959ee59&amp;siteId=000000001&amp;menu=wmess</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="CSRF-ENCRYPT-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">CSRF-ENCRYPT-TOKEN</stringProp>
+                  <stringProp name="Header.value">${CSRF_Token1}</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="29 /Retail/data/ess/api/CustomAvailableUnfilledShifts" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="_dc" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">_dc</stringProp>
+                  <stringProp name="Argument.value">1579515669804</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="selectedWeekDay" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">selectedWeekDay</stringProp>
+                  <stringProp name="Argument.value">2020-01-25T00%3A00%3A00</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="siteId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">siteId</stringProp>
+                  <stringProp name="Argument.value">${NativeID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/data/ess/api/CustomAvailableUnfilledShifts</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal/page?libraryContext=9cc9db0a5213abde4ec627aa2a3e6b3578a5a2cfbcf546fb18b791f41959ee59&amp;siteId=000000001&amp;menu=wmess</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="CSRF-ENCRYPT-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">CSRF-ENCRYPT-TOKEN</stringProp>
+                  <stringProp name="Header.value">${CSRF_Token1}</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="28 /Retail/data/ess/api/MyCustomSchedule/2020-01-25" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="_dc" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">_dc</stringProp>
+                  <stringProp name="Argument.value">1579515669799</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">id</stringProp>
+                  <stringProp name="Argument.value">2020-01-25</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="siteId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">siteId</stringProp>
+                  <stringProp name="Argument.value">${NativeID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/data/ess/api/MyCustomSchedule/2020-01-25</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal/page?libraryContext=9cc9db0a5213abde4ec627aa2a3e6b3578a5a2cfbcf546fb18b791f41959ee59&amp;siteId=000000001&amp;menu=wmess</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="CSRF-ENCRYPT-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">CSRF-ENCRYPT-TOKEN</stringProp>
+                  <stringProp name="Header.value">${CSRF_Token1}</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ShiftID" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">ShiftID</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;ScheduledShiftID&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NF</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ReqID" enabled="false">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">ReqID</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;RequestID&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NF</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="ClickonShift" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="31 /v1/me/reportmyactivity/" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;endpointId&quot;:&quot;43396e21-f19a-460a-8be2-021ea2c02796&quot;,&quot;isActive&quot;:true}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">noam.presence.teams.microsoft.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/v1/me/reportmyactivity/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+              <stringProp name="ConstantTimer.delay">12364</stringProp>
+              <stringProp name="RandomTimer.range">100.0</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:12364ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="BehaviorOverride" elementType="Header">
+                  <stringProp name="Header.name">BehaviorOverride</stringProp>
+                  <stringProp name="Header.value">redirectAs404</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://teams.microsoft.com/_</stringProp>
+                </elementProp>
+                <elementProp name="x-ms-endpoint-id" elementType="Header">
+                  <stringProp name="Header.name">x-ms-endpoint-id</stringProp>
+                  <stringProp name="Header.value">43396e21-f19a-460a-8be2-021ea2c02796</stringProp>
+                </elementProp>
+                <elementProp name="x-ms-client-version" elementType="Header">
+                  <stringProp name="Header.name">x-ms-client-version</stringProp>
+                  <stringProp name="Header.value">27/1.0.0.2020010326</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://teams.microsoft.com</stringProp>
+                </elementProp>
+                <elementProp name="x-ms-session-id" elementType="Header">
+                  <stringProp name="Header.name">x-ms-session-id</stringProp>
+                  <stringProp name="Header.value">e3f99157-dfd3-415e-1641-386ff4e66a6d</stringProp>
+                </elementProp>
+                <elementProp name="x-ms-user-type" elementType="Header">
+                  <stringProp name="Header.name">x-ms-user-type</stringProp>
+                  <stringProp name="Header.value">user</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">json</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InBpVmxsb1FEU01LeGgxbTJ5Z3FHU1ZkZ0ZwQSIsImtpZCI6InBpVmxsb1FEU01LeGgxbTJ5Z3FHU1ZkZ0ZwQSJ9.eyJhdWQiOiJodHRwczovL25vYW0ucHJlc2VuY2UudGVhbXMubWljcm9zb2Z0LmNvbS8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yYWMzNmNlZS0wNjE3LTRhYzAtYmViZi1lMWNlNWRmYWI4NmMvIiwiaWF0IjoxNTc5NTE0MDYzLCJuYmYiOjE1Nzk1MTQwNjMsImV4cCI6MTU3OTUxNzk2MywiYWNyIjoiMSIsImFpbyI6IkFXUUFtLzhPQUFBQTlUQWJoWG0wQTBvSTdBS1llOXVwVVpEdGRzK2lKWE1mMmZYOUU1NzlBRnVpNS91aXNud1R2QUV3YXBXYjFNdFhWUHg0QzZqRmdTMVBWSnEzMWlQaitTOGpMY1FBWlRXTTl4NTRxTkpFQjFqRFJPNWgvM1hRY3lKTEFGekhOUzFSIiwiYW1yIjpbInB3ZCJdLCJhcHBpZCI6IjFmZWM4ZTc4LWJjZTQtNGFhZi1hYjFiLTU0NTFjYzM4NzI2NCIsImFwcGlkYWNyIjoiMCIsImZhbWlseV9uYW1lIjoiR3VkdXB1IiwiZ2l2ZW5fbmFtZSI6IkFuamFuaSBTcmkgTGFrc2htaSIsImlwYWRkciI6IjIwNy4xMDguMTQxLjExMCIsIm5hbWUiOiJBbmphbmkgU3JpIExha3NobWkgR3VkdXB1IChDVykiLCJvaWQiOiI1ZWFjMTg2NC02Mzk4LTQ2MzEtYjRlMy1jMzZiMTYwNzhiMDMiLCJvbnByZW1fc2lkIjoiUy0xLTUtMjEtODkxNTM4Ny03NzYzNDQ5MDgtMTg3NDA3ODc0MS01NzQ0MDkiLCJwdWlkIjoiMTAwMzIwMDAzNjEwRTE4OCIsInNjcCI6IlByZXNlbmNlUlciLCJzdWIiOiJycDBCb1FfZGlpRTU5UzlFNDJLTG5PdTJSakZLMlg5SElEMlNSYU1lcVQ4IiwidGlkIjoiMmFjMzZjZWUtMDYxNy00YWMwLWJlYmYtZTFjZTVkZmFiODZjIiwidW5pcXVlX25hbWUiOiJBbmphbmlTcmlMYWtzaG1pLkd1ZHVwdUBqZGEuY29tIiwidXBuIjoiQW5qYW5pU3JpTGFrc2htaS5HdWR1cHVAamRhLmNvbSIsInV0aSI6InlfS0NfX2ZkdFU2ZFhWWTFpR2dnQUEiLCJ2ZXIiOiIxLjAifQ.uqsTEWxGPpx2Nk_nILn6ot-1Opcy1fLqI3oAJs9uRVM1mZ9MiUIENEkv0RBxydtDS1a7pUwrj4M3DKUnCHGi-_RQupBzjxFzCdHbm-A2z2FAjtreqglmTgR0lBvjBxymmTKQbglY70-F5kpnQELXd2tuBi0MRKON1yAbm7gbIT9tG1OzjCc-EFlMRv193H-cVaWqroRxK3TEpyP5G3vjaGFlSAoGTUt-YT1evq_3m0UmPKSMZZ34Cdn4ws9zDSVuiEmVg5kz8FTob_rF_TUCPQgfvUul0k8XkLAl2BHMuObz31zWhwEHHZaDgDR34_z7SeYCe5H8H84vL93AlU6CEw</stringProp>
+                </elementProp>
+                <elementProp name="x-ms-client-type" elementType="Header">
+                  <stringProp name="Header.name">x-ms-client-type</stringProp>
+                  <stringProp name="Header.value">desktop</stringProp>
+                </elementProp>
+                <elementProp name="x-ms-correlation-id" elementType="Header">
+                  <stringProp name="Header.name">x-ms-correlation-id</stringProp>
+                  <stringProp name="Header.value">d5ca123e-b58c-4ce8-bb6e-55f0e4d682b4</stringProp>
+                </elementProp>
+                <elementProp name="x-ms-client-env" elementType="Header">
+                  <stringProp name="Header.name">x-ms-client-env</stringProp>
+                  <stringProp name="Header.value">msteams-web-prod-uswe2-02</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="x-ms-scenario-id" elementType="Header">
+                  <stringProp name="Header.name">x-ms-scenario-id</stringProp>
+                  <stringProp name="Header.value">20155</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Teams/1.3.00.362 Chrome/66.0.3359.181 Electron/3.1.13 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="33 /Retail/data/ess/CustomServices/SwapShift.asmx/GetAvailableShifts?siteId=1649656" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;myShiftID&quot;:&quot;${ShiftID}&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/data/ess/CustomServices/SwapShift.asmx/GetAvailableShifts?siteId=${NativeID}</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+              <stringProp name="ConstantTimer.delay">9638</stringProp>
+              <stringProp name="RandomTimer.range">100.0</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:9638ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal/page?libraryContext=9cc9db0a5213abde4ec627aa2a3e6b3578a5a2cfbcf546fb18b791f41959ee59&amp;siteId=000000001&amp;menu=wmess</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="CSRF-ENCRYPT-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">CSRF-ENCRYPT-TOKEN</stringProp>
+                  <stringProp name="Header.value">${CSRF_Token1}</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ReqID" enabled="false">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">ReqID</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;RequestID&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NF</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Save" enabled="false">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="37 /Retail/data/ess/services/Commands.asmx/ProcessCommands?siteId=1649656" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;jsChangeCommands&quot;:[{&quot;__TYPE&quot;:&quot;ESS.Commands.SwapShift.SubmitSwapShiftRequests&quot;,&quot;RequestedScheduledShiftIDs&quot;:[${ReqID}],&quot;OriginalScheduledShiftID&quot;:${ShiftID}}]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/data/ess/services/Commands.asmx/ProcessCommands?siteId=${NativeID}</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+              <stringProp name="ConstantTimer.delay">22045</stringProp>
+              <stringProp name="RandomTimer.range">100.0</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:22045ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal/page?libraryContext=9cc9db0a5213abde4ec627aa2a3e6b3578a5a2cfbcf546fb18b791f41959ee59&amp;siteId=000000001&amp;menu=wmess</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="CSRF-ENCRYPT-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">CSRF-ENCRYPT-TOKEN</stringProp>
+                  <stringProp name="Header.value">${CSRF_Token1}</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="38 /Retail/data/ess/CustomServices/SwapShift.asmx/GetCustomRequestedByMe?siteId=1649656" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/data/ess/CustomServices/SwapShift.asmx/GetCustomRequestedByMe?siteId=${NativeID}</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal/page?libraryContext=9cc9db0a5213abde4ec627aa2a3e6b3578a5a2cfbcf546fb18b791f41959ee59&amp;siteId=000000001&amp;menu=wmess</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="CSRF-ENCRYPT-TOKEN" elementType="Header">
+                  <stringProp name="Header.name">CSRF-ENCRYPT-TOKEN</stringProp>
+                  <stringProp name="Header.value">${CSRF_Token1}</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Logout" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="93 /Retail/rp/logout" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">walmart-psr-wfmr.jdadelivers.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/Retail/rp/logout</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+              <stringProp name="ConstantTimer.delay">31116</stringProp>
+              <stringProp name="RandomTimer.range">100.0</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:31116ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">navigate</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://walmart-psr-wfmr.jdadelivers.com/Retail/portal?siteId=${SiteID}</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-User" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                  <stringProp name="Header.value">?1</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</stringProp>
+                </elementProp>
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>false</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>true</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <hostname>true</hostname>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder" enabled="false">
+        <stringProp name="ProxyControlGui.port">8888</stringProp>
+        <collectionProp name="ProxyControlGui.exclude_list">
+          <stringProp name="1179605444">(?i).*\.(bmp|css|js|gif|ico|jpe?g|png|swf|eot|otf|ttf|mp4|woff|woff2)</stringProp>
+          <stringProp name="-88591710">www\.download\.windowsupdate\.com.*</stringProp>
+          <stringProp name="1206954446">tiles.*\.mozilla\.com.*</stringProp>
+          <stringProp name="-1424663473">.*detectportal\.firefox\.com.*</stringProp>
+          <stringProp name="-1899150273">api\.bing\.com.*</stringProp>
+          <stringProp name="-192420923">.*yimg\.com.*</stringProp>
+          <stringProp name="305776760">(?i).*\.(bmp|css|js|gif|ico|jpe?g|png|swf|eot|otf|ttf|mp4|woff|woff2)[\?;].*</stringProp>
+          <stringProp name="2118375536">www\.google-analytics\.com.*</stringProp>
+          <stringProp name="-1314416226">sqm\.microsoft\.com.*</stringProp>
+          <stringProp name="11072252">.*toolbar\.yahoo\.com.*</stringProp>
+          <stringProp name="1726898318">geo\.yahoo\.com.*</stringProp>
+          <stringProp name="805311387">windowsupdate\.microsoft\.com.*</stringProp>
+          <stringProp name="1658855950">.*toolbar\.live\.com.*</stringProp>
+          <stringProp name="110431874">.*msg\.yahoo\.com.*</stringProp>
+          <stringProp name="1323576868">toolbarqueries\.google\..*</stringProp>
+          <stringProp name="1739087931">http?://self-repair\.mozilla\.org.*</stringProp>
+          <stringProp name="1779943373">us\.update\.toolbar\.yahoo\.com.*</stringProp>
+          <stringProp name="-190610036">.*\.google\.com.*/safebrowsing/.*</stringProp>
+          <stringProp name="-958112859">toolbar\.google\.com.*</stringProp>
+          <stringProp name="-576820688">toolbar\.msn\.com.*</stringProp>
+          <stringProp name="-1435252351">toolbar\.avg\.com/.*</stringProp>
+          <stringProp name="1193216536">update\.microsoft\.com.*</stringProp>
+          <stringProp name="-1279148329">pgq\.yahoo\.com.*</stringProp>
+          <stringProp name="1815174768">safebrowsing.*\.google\.com.*</stringProp>
+          <stringProp name="587935979">g\.msn.*</stringProp>
+          <stringProp name="1629558731">clients.*\.google.*</stringProp>
+        </collectionProp>
+        <collectionProp name="ProxyControlGui.include_list"/>
+        <boolProp name="ProxyControlGui.capture_http_headers">true</boolProp>
+        <intProp name="ProxyControlGui.grouping_mode">0</intProp>
+        <boolProp name="ProxyControlGui.add_assertion">false</boolProp>
+        <stringProp name="ProxyControlGui.sampler_type_name"></stringProp>
+        <boolProp name="ProxyControlGui.sampler_redirect_automatically">false</boolProp>
+        <boolProp name="ProxyControlGui.sampler_follow_redirects">true</boolProp>
+        <boolProp name="ProxyControlGui.use_keepalive">true</boolProp>
+        <boolProp name="ProxyControlGui.sampler_download_images">false</boolProp>
+        <boolProp name="ProxyControlGui.regex_match">true</boolProp>
+        <stringProp name="ProxyControlGui.content_type_include"></stringProp>
+        <stringProp name="ProxyControlGui.content_type_exclude"></stringProp>
+        <boolProp name="ProxyControlGui.notify_child_sl_filtered">false</boolProp>
+        <stringProp name="ProxyControlGui.proxy_prefix_http_sampler_name"></stringProp>
+        <intProp name="ProxyControlGui.proxy_http_sampler_naming_mode">1</intProp>
+        <stringProp name="ProxyControlGui.proxy_pause_http_sampler"></stringProp>
+      </ProxyControl>
+      <hashTree>
+        <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+          <stringProp name="ConstantTimer.delay">${T}</stringProp>
+          <stringProp name="RandomTimer.range">100.0</stringProp>
+        </UniformRandomTimer>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>true</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>true</responseData>
+              <samplerData>true</samplerData>
+              <xml>true</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>true</responseHeaders>
+              <requestHeaders>true</requestHeaders>
+              <responseDataOnError>true</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <url>true</url>
+              <fileName>true</fileName>
+              <hostname>true</hostname>
+              <threadCounts>true</threadCounts>
+              <sampleCount>true</sampleCount>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">recording.xml</stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
